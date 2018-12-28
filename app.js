@@ -2,12 +2,19 @@
 
 const fs = require('fs');
 const util = require('util');
+const EE = require('events');
+const events = new EE();
+
+events.on('error', handleError);
+
+function handleError(error){
+  console.log('uh oh there\' been an error');
+}
 
 let read = util.promisify(fs.readFile);
 let write = util.promisify(fs.writeFile);
-
-
 let file = process.argv.slice(2).shift();
+
 
 
 
@@ -19,7 +26,8 @@ const alterFile = (file) => {
         .then((text) => {
           console.log(`${file} saved`);
         })
-        .catch(console.error);
+        .catch(error => events.emit('error'));
     });
 };
+
 alterFile(file);
