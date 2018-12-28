@@ -1,42 +1,41 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Event Driven Development
 
-### Author: Student/Group Name
+### Author: Caity Heath
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
+* [repo](https://github.com/CaityHeath/06-event-driven-apps)
+* [travis](https://www.travis-ci.com/CaityHeath/06-event-driven-apps)
+
 
 ### Modules
-#### `modulename.js`
-##### Exported Values and Methods
+#### `app.js`
+##### This is the driver file for this application, it contains the alter file function which takes an argument from the command line to read and rewrite to a file. 
 
-###### `foo(thing) -> string`
-Usage Notes or examples
+#### `events.js`
+##### Exports events which is a events emitter object. 
 
-###### `bar(array) -> array`
-Usage Notes or examples
+#### `logger.js`
+##### This module contains the handleError function and the event listener that calls it. 
+
+
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* To use this application be sure to perform an `npm i jest eslint`
+
 
 #### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+Run the app by performing the following command: 
+`node app.js text.txt`
+* Entrypoint: `app.js`
+* Endpoint: `text.txt`
+  * Transforms the text.txt file to contain all uppercase characters.
+
 
 #### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+* No tests have been created for this application yet. 
 
-#### UML
-Link to an image of the UML for your application and response to events
+
